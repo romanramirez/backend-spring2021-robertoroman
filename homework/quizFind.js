@@ -20,7 +20,7 @@ function numberLotto() {
   for (let i = 0; i < randomArrayLength; i++) {
     randomArray.push(Math.floor(Math.random() * 58 + 1));
   }
-  randomArray.push(Math.floor(Math.random() * 38 + 1));
+  randomArray.push(Math.floor(Math.random() * 38 + 1)); // This creates the powerball number
   return randomArray;
 }
 
