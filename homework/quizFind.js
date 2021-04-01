@@ -27,7 +27,7 @@ let quizFind = (x, y) => {
 // Quiz Lotto V.2
 
 /* 
-We used a Set to check whether length of array was same as Set size.
+I used a Set to check whether length of array was same as Set size.
 This allows us to only check against one value (the array length) instead of checking every value with a for-loop (better time complexity for larger arrays that may become unwieldy.) +1000 brain power. That's the theory, anyway.
 */
 
