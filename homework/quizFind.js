@@ -28,11 +28,10 @@ let quizFind = (x, y) => {
 
 /* 
 We used a Set to check whether length of array was same as Set size.
-This allows us to only check against one value (the array length) instead of checking every value with a for-loop (better time complexity for larger arrays that may become unwieldy.)
-That's the theory, anyway.
+This allows us to only check against one value (the array length) instead of checking every value with a for-loop (better time complexity for larger arrays that may become unwieldy.) +1000 brain power. That's the theory, anyway.
 */
 
-function lottoGen() {
+function quizLotto() {
   let arrLength = 5;
   let arr = [];
   let powerball = Math.trunc(Math.random() * 35) + 1;
@@ -49,7 +48,7 @@ function lottoGen() {
     result = true;
   }
   if (result) {
-    lottoGen(); // If arr.length !== Set size, this runs lottoGen() again.
+    quizLotto(); // If arr.length !== Set size, this runs lottoGen() again.
   } else {
     console.log(`Your lotto numbers are: ${arr}...`);
     arr.push(powerball); // This creates the powerball number and pushes to the end of the array
@@ -58,5 +57,5 @@ function lottoGen() {
   }
 }
 
-// Running lottoGen function
-lottoGen();
+// Running quizLotto function
+quizLotto();
