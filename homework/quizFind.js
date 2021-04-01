@@ -19,6 +19,7 @@ let quizFind = (x, y) => {
   }
 };
 
+// TESTS
 // quizFind(['hello', 'world', 'this', 'is', 'a', 'function'], 'world'); // Test with strings
 // quizFind([13, 45, 63, 4, 2], 4); // Test with numbers
 // quizFind([true, false], true); // Test with booleans
@@ -57,4 +58,5 @@ function lottoGen() {
   }
 }
 
+// Running lottoGen function
 lottoGen();
