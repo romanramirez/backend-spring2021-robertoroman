@@ -73,9 +73,14 @@ if (action === 'read') {
     );
   }
 } else if (action === 'copy') {
-  // // Uses existsSync to check if file exists
-  console.log('Copying your file...');
-  fs.copyFileSync(filename, contents, 0);
+  if (fs.existsSync(filename)) {
+    console.log('Copying your file...');
+    fs.copyFileSync(filename, contents, 0);
+  } else if (!fs.existsSync(filename)) {
+    console.log(
+      'The file you are trying to copy does not exist. Please check file name or create this file.'
+    );
+  }
 } else {
   console.log(
     'There is no action by that name! Please check your spelling. The available actions for this script are: read, write, update, delete, and copy.'
