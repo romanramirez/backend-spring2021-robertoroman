@@ -11,7 +11,7 @@ let action = arguments[2];
 let contents = arguments[4];
 
 // User does not define file name
-if (filename === undefined) {
+if (action === undefined) {
   console.log(
     `Welcome to my file reader! Please provide the file name you want to use after the command.
     
@@ -22,14 +22,13 @@ if (filename === undefined) {
       Delete an existing file: node filereader.js delete myfile.txt
     `
   );
-
+  // End script early if no filename is stated
   return;
 }
 
 // CRUD loop
 if (action === 'read') {
   console.log('Opening your file...');
-
   if (fs.existsSync(filename)) {
     // // Uses existsSync to check if file exists
     let fileContents = fs.readFileSync(filename, 'utf-8');
@@ -46,7 +45,7 @@ if (action === 'read') {
   } else {
     console.log(`Writing a new file...`);
     fs.writeFileSync(filename, ' ', 'utf-8');
-    console.log('Finised writing the file: ' + filename);
+    console.log('Finished writing the file: ' + filename);
   }
 } else if (action === 'update') {
   if (fs.existsSync(filename)) {
@@ -57,7 +56,30 @@ if (action === 'read') {
     fs.appendFileSync(filename, contents, 'utf-8');
   }
 } else if (action === 'delete') {
+  if (fs.existsSync(filename)) {
+    if (contents === 'true') {
+      fs.unlinkSync(filename);
+      console.log(
+        `The dark deed is done. ${filename} has been successfully deleted.`
+      );
+    } else {
+      console.log(
+        `Are you sure you want to delete this file? Please run command again with the word 'true' at the very end.`
+      );
+    }
+  } else {
+    console.log(
+      'There is no file with that name, please double check your argument!'
+    );
+  }
+} else if (action === 'copy') {
+  // // Uses existsSync to check if file exists
+  console.log('Copying your file...');
+  fs.copyFileSync(filename, contents, 0);
 } else {
+  console.log(
+    'There is no action by that name! Please check your spelling. The available actions for this script are: read, write, update, delete, and copy.'
+  );
 }
 
 // console.log(fileContents);
