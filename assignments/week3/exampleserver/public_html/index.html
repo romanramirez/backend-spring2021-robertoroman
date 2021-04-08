@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Express Server</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div>
+          <h1>Hello! Welcome to my Express server 😀</h1>
+        </div>
+        <div>
+          <p>
+            <a href="./secret/index.html"
+              >Click here to go to my secret website!</a
+            >
+          </p>
+        </div>
+        <div>
+          <form>
+            <label for="number">Type a number in!</label>
+            <input type="number" id="number" />
+            <button>Send the number!</button>
+          </form>
+        </div>
+        <p id="results"></p>
+      </section>
+    </main>
+
+    <!-- Javascript -->
+    <script>
+      // JQuery Code
+      //
+      const baseUrl = 'http://localhost:3000';
+
+      $(function () {
+        $('button').click(function (event) {
+          // Prevents button from sending default GET request
+          event.preventDefault();
+
+          // This grabs #number
+          let number = $('#number').val();
+
+          number = parseInt(number);
+
+          if (Number.isNaN(number)) {
+            $('#results').text('Sorry, that is not a valid number.');
+
+            return;
+          }
+
+          let objectToSend = {
+            message: 'Hello!',
+            numberGuess: number,
+          };
+
+          // Jquery POST request
+          $.post(baseUrl + '/submitNumber', objectToSend, function (response) {
+            $('#results').text(response.message);
+
+            console.log('The server has responded!');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
