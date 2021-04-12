@@ -1,5 +1,7 @@
-'use strict';
-// Importing express module
 const express = require('express');
 
 const app = express();
+
+const http = require('http').Server(app);
+
+http.listen(3000);
