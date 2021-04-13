@@ -1,4 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Utility Classes */
+
+.bolded {
+  font-family: 'Poppins', sans-serif;
+}
+
+.dark {
+  color: #000;
+}
+
+/* General Styling */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main-row {
+  /* border: 1px solid #333; */
+  margin: 0px 20px 0px 20px;
+}
+
 #main.card {
-  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
   padding: 15px;
+}
+
+/* Welcome Section */
+.welcome {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+}
+/* Task List */
+
+a.btn {
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+a.btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/*  Task Action  */
+input.btn.addtask {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: rgb(255, 44, 114);
+  font-family: 'poppins', sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+input.btn.addtask:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+label #text::after {
+  color: rgb(255, 44, 114);
+}
+
+i {
+  color: red;
+  transition: all 0.2s ease-in-out;
+}
+
+i.fas:hover {
+  transform: scale(1.5);
+}
+
+/* Priority buttons */
+.container .radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px auto auto 0px;
+}
+
+/* Task List Items */
+
+ul.collection {
+  border-radius: 30px;
+  border-color: #fff;
 }

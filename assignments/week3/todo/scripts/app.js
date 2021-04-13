@@ -1,7 +1,3 @@
-// $(function () {
-//   console.log('H');
-// });
-
 // Define UI Variables
 const form = document.querySelector('#task-form');
 const taskList = document.querySelector('.collection');
@@ -41,7 +37,7 @@ function getTasks(e) {
     const li = document.createElement('li');
 
     // Add class
-    li.className = 'collection-item';
+    li.className = 'collection-item bolded';
 
     // Create text node and append to li
     // This appends our recently created list item to the list of tasks
@@ -56,7 +52,8 @@ function getTasks(e) {
 
     // Adding our icon HTML
     // We add the i class "fa fa-remove" for FontAwesome
-    link.innerHTML = '<i class="fa fa-times"></i>';
+    link.innerHTML = '<i class="fas fa-times-circle"></i>';
+    // link.innerHTML = '<i class="fa fa-times"></i>';
 
     // Append link to li
     li.appendChild(link);
@@ -77,7 +74,7 @@ function addTask(e) {
   const li = document.createElement('li');
 
   // Add class
-  li.className = 'collection-item';
+  li.className = 'collection-item bolded';
 
   // Create text node and append to li
   // This appends our recently created list item to the list of tasks
@@ -92,7 +89,8 @@ function addTask(e) {
 
   // Adding our icon HTML
   // We add the i class "fa fa-remove" for FontAwesome
-  link.innerHTML = '<i class="fa fa-times"></i>';
+  link.innerHTML = '<i class="fas fa-times-circle"></i>';
+  // link.innerHTML = '<i class="fa fa-times"></i>';
 
   // Append link to li
   li.appendChild(link);

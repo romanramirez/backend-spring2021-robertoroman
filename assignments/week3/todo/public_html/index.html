@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="/styles/reset.css" />
+
     <!-- Materialize CSS -->
     <link
       rel="stylesheet"
@@ -18,35 +21,79 @@
       crossorigin="anonymous"
     />
     <!-- Local CSS -->
-    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
 
     <title>ToDo-ist</title>
   </head>
   <body>
     <div class="container">
-      <div class="row">
+      <div class="welcome">
+        <h1 class="bolded">TODOist</h1>
+        <p>
+          We get it. You're a busy go-getter with a full plate. Or maybe you're
+          a bit of a slacker &#x28;that's totally cool, too&#x29;.
+        </p>
+        <p>
+          Whatever your case may be, TODOist helps you organize your tasks and
+          get stuff done.
+        </p>
+      </div>
+      <div id="main-row" class="row">
         <div class="col s12">
           <div id="main" class="card">
             <div class="card-content">
-              <span class="card-title">Task List</span>
+              <span class="card-title bolded">Task List</span>
               <div class="row">
                 <form id="task-form">
                   <div class="input-field col s12">
                     <input type="text" name="task" id="task" />
-                    <label for="task">New Task</label>
+                    <label for="task" class="new-task">New Task</label>
                   </div>
-                  <input type="submit" value="Add Task" class="btn" />
+                  <!-- <div class="priority"> -->
+                  <p class="bolded dark">Priority level</p>
+                  <div class="container radio">
+                    <label class="radio-btn">
+                      <input
+                        class="with-gap"
+                        name="yourchoice"
+                        type="radio"
+                        checked
+                      />
+                      <span>High</span> </label
+                    ><label class="radio-btn">
+                      <input
+                        class="with-gap"
+                        name="yourchoice"
+                        type="radio"
+                        checked
+                      />
+                      <span>Medium</span>
+                    </label>
+                    <label class="radio-btn">
+                      <input
+                        class="with-gap"
+                        name="yourchoice"
+                        type="radio"
+                        checked
+                      />
+                      <span>Low</span>
+                    </label>
+                    <!-- </div> -->
+                  </div>
+                  <input type="submit" value="Add Task" class="btn addtask" />
                 </form>
               </div>
             </div>
             <div class="card-action">
-              <h5 id="task-title">Tasks</h5>
+              <h5 id="task-title" class="bolded">Tasks</h5>
               <div class="input-field col s12">
                 <input type="text" name="filter" id="filter" />
                 <label for="filter">Filter Tasks</label>
               </div>
               <ul class="collection"></ul>
-              <a href="#" class="clear-tasks btn black round">Clear tasks</a>
+              <a href="#" class="clear-tasks btn black round bolded"
+                >Clear tasks</a
+              >
             </div>
           </div>
         </div>
@@ -54,7 +101,7 @@
     </div>
 
     <!-- Javacript -->
-    <script src="/scripts/app.js"></script>
+    <script src="../scripts/app.js"></script>
 
     <!-- jQuery (Materialize dependency) -->
     <script
