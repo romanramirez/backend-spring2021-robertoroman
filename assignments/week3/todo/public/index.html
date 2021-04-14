@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS Reset -->
-    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
 
     <!-- Materialize CSS -->
     <link
@@ -21,22 +21,25 @@
       crossorigin="anonymous"
     />
     <!-- Local CSS -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
-    <title>ToDo-ist</title>
+    <title>TŌDO</title>
   </head>
   <body>
     <div class="container">
       <div class="welcome">
-        <h1 class="bolded">TODOist</h1>
-        <p>
-          We get it. You're a busy go-getter with a full plate. Or maybe you're
-          a bit of a slacker &#x28;that's totally cool, too&#x29;.
-        </p>
-        <p>
-          Whatever your case may be, TODOist helps you organize your tasks and
-          get stuff done.
-        </p>
+        <h1 class="bolded">TŌDO</h1>
+        <div class="welcome-text">
+          <p>
+            Whether you're a busy go-getter with a full plate or a bit of a
+            slacker &#40;that's cool too!&#41;
+          </p>
+          <br />
+          <p>
+            <span class="bolded">TŌDO</span> lets you quickly make a task list,
+            set priority levels, due dates, and even add tags.
+          </p>
+        </div>
       </div>
       <div id="main-row" class="row">
         <div class="col s12">
@@ -44,7 +47,7 @@
             <div class="card-content">
               <span class="card-title bolded">Task List</span>
               <div class="row">
-                <form id="task-form">
+                <form id="task-form" autocomplete="off">
                   <div class="input-field col s12">
                     <input type="text" name="task" id="task" />
                     <label for="task" class="new-task">New Task</label>
@@ -80,7 +83,10 @@
                     </label>
                     <!-- </div> -->
                   </div>
-                  <input type="submit" value="Add Task" class="btn addtask" />
+                  <div class="buttoncontainer">
+                    <input type="submit" value="Add Task" class="btn addtask" />
+                    <a href="#" class="btn bolded transparent">Add Details</a>
+                  </div>
                 </form>
               </div>
             </div>
@@ -101,7 +107,7 @@
     </div>
 
     <!-- Javacript -->
-    <script src="../scripts/app.js"></script>
+    <script src="./scripts/app.js"></script>
 
     <!-- jQuery (Materialize dependency) -->
     <script

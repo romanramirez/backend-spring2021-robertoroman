@@ -5,6 +5,8 @@ const clearBtn = document.querySelector('.clear-tasks');
 const filter = document.querySelector('#filter');
 const taskInput = document.querySelector('#task');
 
+// Form Reset
+
 // Load all event listeners, works because our function is hoisted
 loadEventListeners();
 

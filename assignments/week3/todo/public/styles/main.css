@@ -12,10 +12,20 @@
   color: #000;
 }
 
+.transparent {
+  background: transparent;
+  color: #000;
+}
+
 /* General Styling */
+
+h1 {
+  text-shadow: 4px 2px #ff5874c5;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
+  background: hsl(0, 0%, 97%);
 }
 
 .container {
@@ -26,7 +36,6 @@ body {
 }
 
 #main-row {
-  /* border: 1px solid #333; */
   margin: 0px 20px 0px 20px;
 }
 
@@ -35,20 +44,22 @@ body {
   flex-direction: column;
   border-radius: 20px;
   padding: 15px;
+  box-shadow: 5px 20px 30px #0000001c;
 }
 
 /* Welcome Section */
 .welcome {
-  margin-bottom: 3rem;
+  margin: auto auto 2rem auto;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
 .welcome p {
   font-size: 1.2rem;
+  width: 450px;
 }
+
 /* Task List */
 
 a.btn {
@@ -61,22 +72,30 @@ a.btn:hover {
   transform: scale(1.05);
 }
 
+/* Buttons Container */
+.buttoncontainer {
+  display: flex;
+  margin-top: 20px;
+}
+
 /*  Task Action  */
 input.btn.addtask {
-  margin-top: 20px;
   border-radius: 30px;
-  background: rgb(255, 44, 114);
+  /* background: rgb(255, 44, 114); */
+  background: linear-gradient(
+    to right,
+    rgb(253, 104, 154),
+    rgb(252, 44, 113),
+    rgb(253, 21, 98)
+  );
   font-family: 'poppins', sans-serif;
   transition: all 0.2s ease-in-out;
+  margin-right: 1rem;
 }
 
 input.btn.addtask:hover {
   opacity: 0.9;
   transform: scale(1.05);
-}
-
-label #text::after {
-  color: rgb(255, 44, 114);
 }
 
 i {
@@ -95,6 +114,8 @@ i.fas:hover {
   justify-content: flex-start;
   margin: 20px auto auto 0px;
 }
+
+/* Due Date */
 
 /* Task List Items */
 
