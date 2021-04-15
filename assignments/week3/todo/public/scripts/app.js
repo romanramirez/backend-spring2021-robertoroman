@@ -1,3 +1,21 @@
+// JQuery
+// Remember to look this up and learn it 🤷🏽‍♂️
+let base_URL = 'http://localhost:3000';
+$(function () {
+  $('#addtask').click(function () {
+    let taskObject = {
+      text: $('#task-text').val(),
+      priority: $('#new-task dive input[type=radio]:checked').val(),
+      dueDate: $('#due-date').val(),
+    };
+    console.log(taskObject);
+
+    $.post(base_URL + '/add-task', taskObject, function () {
+      console.log('Server responded!');
+    });
+  });
+});
+
 // Define UI Variables
 const form = document.querySelector('#task-form');
 const taskList = document.querySelector('.collection');

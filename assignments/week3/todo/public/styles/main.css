@@ -78,6 +78,11 @@ a.btn:hover {
   margin-top: 20px;
 }
 
+/* Detail Box */
+.detail-box {
+  display: flex;
+}
+
 /*  Task Action  */
 input.btn.addtask {
   border-radius: 30px;
