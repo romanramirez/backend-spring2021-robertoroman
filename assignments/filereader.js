@@ -16,13 +16,13 @@ if (action === undefined) {
     `Welcome to my file reader! Please provide the file name you want to use after the command.
     
     Example: 
-      Read an existing file: node filereader.js read myfile.txt
-      Write a new file: node filereader.js write myfile.txt
-      Update an existing file: node filereader.js update myfile.txt
-      Delete an existing file: node filereader.js delete myfile.txt
+      To ead an existing file: node filereader.js read myfile.txt
+      To write a new file: node filereader.js write myfile.txt
+      To update an existing file: node filereader.js update myfile.txt
+      To delete an existing file: node filereader.js delete myfile.txt
     `
   );
-  // End script early if no filename is stated
+  // If no command entered, end program
   return;
 }
 

@@ -1,66 +1,60 @@
+// Define Task class
 class Task {
-  constructor(text, priority, dueDate) {
-    this.setText(text);
-
-    let dateResults = this.setDueDate(dueDate);
-    if (dateResults === 1) {
-      this.dueDate = new Date();
-    }
-
-    this.dateCreated = new Date();
-    if (priority === undefined) {
-      this.priority = 1;
-    } else {
-      results = this.setPriority(priority);
-      if (results === 1) {
-        this.priority = 1;
-      }
-    }
-    this.priority = priority;
-    this.dateCompleted = null;
-    this.dateDeleted = null;
-  }
-
+  // Getter/Setter for the Task text.
   getText() {
     return this.text;
   }
   setText(text) {
-    this.text = text.toString();
+    if (typeof text === 'string') {
+      this.text = text;
+    } else {
+      this.text = 'INVALID VALUE';
+    }
   }
 
+  // Getter/Setter for the Task text.
   getDueDate() {
     return this.dueDate;
   }
   setDueDate(dueDate) {
+    // Ensure that due date entered is a Regular Expression.
     let datePattern = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
+    // Test string with regular expression pattern.
     let validDate = datePattern.test(dueDate);
 
+    // If the date format is valid...
     if (validDate) {
+      // ...split the string and convert into a number.
       let dateParts = dueDate.split('-');
-
       dateParts[0] = parseInt(dateParts[0]);
       dateParts[1] = parseInt(dateParts[1]);
       dateParts[2] = parseInt(dateParts[2]);
 
-      if (dateParts[1] > 12) {
-        dateParts[1] = 12;
-      }
+      // Subtract 1 from month value bc month in Date Object starts at 0.
+      dateParts[1] = dateParts[1] - 1; // dateParts[1]--;
 
+      // Check that number is not out of bounds.
+      if (dateParts[1] > 11) {
+        dateParts[1] = 11;
+      }
       if (dateParts[2] > 31) {
         dateParts[2] = 31;
       }
-
+      // Create a new Date object based on numbers from front-end.
       this.dueDate = new Date(dateParts[0], dateParts[1], dateParts[2]);
       return 0;
     } else {
+      // If tests failed, return 1.
       return 1;
     }
   }
 
+  // Getter/Setter for priority
   getPriority() {
     return this.priority;
   }
   setPriority(priority) {
+    // Parse the argument into a number. If it fails, return 1.
     priority = parseInt(priority);
     if (Number.isNaN(priority)) {
       return 1;
@@ -75,7 +69,7 @@ class Task {
   }
 
   isCompleted() {
-    if (this.dateComplete === null) {
+    if (this.dateCompleted === null) {
       return false;
     } else {
       return true;
@@ -85,7 +79,6 @@ class Task {
   markDeleted() {
     this.dateDeleted = new Date();
   }
-
   isDeleted() {
     if (this.dateDeleted === null) {
       return false;
@@ -95,6 +88,7 @@ class Task {
   }
 }
 
+// Export out our task.js file
 module.exports = {
   Task: Task,
 };

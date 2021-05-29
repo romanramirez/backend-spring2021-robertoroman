@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const { type } = require('os');
 
 // Creating our empty json file.
 fs.writeFileSync('myJSON.json', '', 'utf-8');
